@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "82d5493d-5f18-412a-af82-918a3116eebd",
+		"name": "Topup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Find all customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9002/topup/customers/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Mohamed\",\n    \"email\": \"shall@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9002/topup/customers/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallets",
+			"item": [
+				{
+					"name": "Find all wallets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9002/topup/wallets/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"wallets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"1\",\n    \"currencyId\": 1,\n    \"balance\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9002/topup/wallets/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"wallets",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currency",
+			"item": [
+				{
+					"name": "Find all currencies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9002/topup/currency/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"currency",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new currency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"USD\",\n    \"symbol\": \"$\",\n    \"value\": 1.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9002/topup/currency/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"currency",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Find all transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9002/topup/charge/",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"topup",
+								"charge",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Charge credit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 30.5,\n    \"currency\": \"USD\",\n    \"charge_id\": \"1\",\n    \"customer\": {\n        \"id\": \"1\",\n        \"wallet_id\": \"1\"\n    },\n    \"fees\": {\n        \"amount\": 5,\n        \"currency\": \"USD\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9002/topup/charge/",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"topup",
+						"charge",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
