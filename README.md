@@ -125,19 +125,6 @@ Topup Microservice
 
 ```
 
-  
-
-Students Microservice
-
-```
-
-http://localhost:9002/topup/swagger-ui/index.html
-
-```
-
-  
-  
-  
 
 First of all, make sure to install **zipkin** server on your local machine:
 
