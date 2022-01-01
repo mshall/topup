@@ -1,0 +1,14 @@
+server:
+  port: 9296
+
+spring:
+  profiles:
+    active: native
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: ../cloud-config-server-repo
+          clone-on-start: true

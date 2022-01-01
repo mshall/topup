@@ -55,3 +55,11 @@ CREATE TABLE public.wallets (
 	currency_id int4 NULL,
 	balance float8 NULL
 );
+
+
+INSERT INTO public.currency
+("name", symbol, value, id)
+VALUES('USD', '$', 1, 1);
+VALUES('KWD', '$', 4, 2);
+VALUES('AED', '$', 0.27, 3);
+VALUES('EGP', '$', 0.12, 4);

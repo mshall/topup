@@ -43,7 +43,7 @@ Our application is doing the following
 
 - Hystrix
 
-- Postgres DB (**H2 DB**)
+- Postgres DB
 
 - Lombok
 
@@ -115,13 +115,13 @@ I've added a sample collection to prove gateway is working through attached post
 
 Then,
 
-Please note that APIs lists for  (topup microservices) can be accessed through Swagger:
+Please note that APIs lists for  (topup microservic) can be accessed through Swagger:
 
 Topup Microservice
 
 ```
 
-http://localhost:9002/swagger-ui/
+[Topup Swagger URL](http://localhost:9002/topup/swagger-ui/index.html)
 
 ```
 
@@ -139,9 +139,9 @@ http://localhost:9002/topup/swagger-ui/index.html
   
   
 
-First of all, make sure to install zipkin server on your local machine:
+First of all, make sure to install **zipkin** server on your local machine:
 
-This can be done through docker commands:
+This can be done through **docker** commands:
 
 Make sure you have docker installed then:
 
@@ -180,14 +180,10 @@ Before going through the steps, microservices to be started in the following ord
   
 
 - Service Registry
-
 - Config Server
-
-- API Gateway
-
-- Hystrix
-
 - Topup
+- Hystrix
+- API Gateway
 
   
 
@@ -331,72 +327,31 @@ mvn test
 
   
 
-  
+### 1- Adding Exception handling through AOP  
 
-### 1- Add test coverage through the following:
+### 2- Add test coverage through the following:
 
-  
-
+ 
 Add the following plugin to your pom.xml
-
   
 
-  
-
-<reporting>
-
-  
-
-<plugins>
-
-  
-
-<plugin>
-
-  
-
-<groupId>org.apache.maven.plugins</groupId>
-
-  
-
-<artifactId>maven-surefire-report-plugin</artifactId>
-
-  
-
-</plugin>
-
-  
-
-<plugin>
-
-  
-
-<groupId>org.apache.maven.plugins</groupId>
-
-  
-
-<artifactId>maven-jxr-plugin</artifactId>
-
-  
-
-</plugin>
-
-  
-
-</plugins>
-
-  
-
-</reporting>
-
-  
+    <reporting>
+        <plugins>
+    	    <plugin>
+    	    <groupId>org.apache.maven.plugins</groupId>
+    	    <artifactId>maven-surefire-report-plugin</artifactId>
+    	    </plugin>
+    	    <plugin>
+    	    <groupId>org.apache.maven.plugins</groupId>
+    	    <artifactId>maven-jxr-plugin</artifactId>
+    	    </plugin>
+        </plugins>
+    </reporting>
 
   
 
 Then Run the following command:
 
-  
-
-  
-
 mvn site
+
+### 3- Adding support of having wallets with different currencies for each wallet instead of USD only

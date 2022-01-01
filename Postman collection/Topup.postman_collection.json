@@ -110,6 +110,55 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Find all wallets - Gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/topup/wallets/",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"topup",
+								"wallets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"1\",\n    \"currencyId\": 1,\n    \"balance\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9191/topup/wallets/",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"topup",
+								"wallets",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -156,6 +205,26 @@
 								"localhost"
 							],
 							"port": "9002",
+							"path": [
+								"topup",
+								"currency",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find all currencies - Gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/topup/currency/",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
 							"path": [
 								"topup",
 								"currency",
@@ -212,6 +281,35 @@
 						"localhost"
 					],
 					"port": "9002",
+					"path": [
+						"topup",
+						"charge",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Charge credit - Gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 30,\n    \"currency\": \"USD\",\n    \"charge_id\": \"1\",\n    \"customer\": {\n        \"id\": \"1\",\n        \"wallet_id\": \"1\"\n    },\n    \"fees\": {\n        \"amount\": 10,\n        \"currency\": \"USD\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9191/topup/charge/",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
 					"path": [
 						"topup",
 						"charge",
