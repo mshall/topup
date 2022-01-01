@@ -327,9 +327,7 @@ mvn test
 
   
 
-### 1- Adding Exception handling through AOP  
-
-### 2- Add test coverage through the following:
+### 1- Add test coverage through the following:
 
  
 Add the following plugin to your pom.xml
@@ -354,4 +352,4 @@ Then Run the following command:
 
 mvn site
 
-### 3- Adding support of having wallets with different currencies for each wallet instead of USD only
+### 2- Adding support of having wallets with different currencies for each wallet instead of USD only

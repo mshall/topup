@@ -40,7 +40,7 @@ public class TransactionsController {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
 	public ResponseVO<TransactionResponseVO> processTransaction(@Valid @RequestBody TransactionRequestVO request,
-			Errors errors) {
+			Errors errors) throws Exception{
 		if (errors.hasErrors()) {
 			ResponseVO response = new ResponseVO<TransactionResponseVO>();
 			response.setResults(errors);
